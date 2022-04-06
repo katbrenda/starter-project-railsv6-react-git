@@ -8,7 +8,6 @@ import NoMatch from './components/shared/NoMatch';
 import HomeClass from './components/shared/HomeClass';
 
 
-
 function App() {
   return (
     <div>
@@ -21,7 +20,7 @@ function App() {
         <Route path='/register' element={<Register />}/>
         <Route path='*' element={<NoMatch />}/>
       </Routes>
-      </>
+      </> 
     </div>
   );
 }

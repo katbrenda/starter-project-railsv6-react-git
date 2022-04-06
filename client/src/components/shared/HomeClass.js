@@ -1,18 +1,24 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../../providers/AuthProvider'
+import React, { useContext } from "react"
+import { AuthConsumer, AuthContext } from "../../providers/AuthProvider";
 
 class HomeClass extends React.Component {
-    // auth = useContext(AuthContext)
     render(){
        return (
        <div>
-           <h1>Home</h1>
-           {/* <p>hello {this.auth.user.email}</p>
-           <p>{JSON.stringify(auth)}</p> */}
+           <h1>Home Class</h1>
+           <p>hello {this.props.user.email}</p>
+           <p>{JSON.stringify(this.props)}</p>
        </div>
        );
     }
-    
 }
 
-export default HomeClass
+const ConnectedHomeClass = ()=>{
+    return(
+        <AuthConsumer>
+        { value => <HomeClass {...value} />}
+        </AuthConsumer>
+    )
+
+}
+export default ConnectedHomeClass
